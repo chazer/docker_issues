@@ -1,5 +1,12 @@
 # Migrate project to another host
 
+## Allow `sudo` without password on remote side
+
+```
+SSH_TARGET=user@host
+ssh -tt ${SSH_TARGET} "sudo sh -c 'echo \"${USER} ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/${USER/./_}'"
+```
+
 ## Copy images
 
 ```
